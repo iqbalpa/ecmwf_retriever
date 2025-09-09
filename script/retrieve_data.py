@@ -57,10 +57,9 @@ if __name__ == "__main__":
         url = API_TEMPLATE.format(latitude=latitude, longitude=longitude,
                                   start_date=start_date, end_date=end_date)
 
-        # file paths
-        base = f"data/{region}_{start_date}_to_{end_date}"
-        json_path = f"{base}.json"
-        csv_path = f"{base}.csv"
+        # file paths (json in data/json/, csv in data/csv/)
+        json_path = f"data/json/{region}_{start_date}_to_{end_date}.json"
+        csv_path = f"data/csv/{region}_{start_date}_to_{end_date}.csv"
 
         try:
             obj = retrieve_json(url)
